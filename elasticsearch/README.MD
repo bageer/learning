@@ -46,6 +46,6 @@ ES的“分片(shard)”机制可将一个索引内部的数据分布地存储�
 
 >Shard有两种类型：主分片(primary shard)和副本分片(replica shard)
 >
->1、主分片用于文档存储，新建一个索引需指定分片数量，一旦索引创建完成，其Primary shard的数量将不可更改。
+>1、primary shard用于文档存储，新建一个索引需指定分片数量，一旦索引创建完成，其primary shard的数量将不可更改，可通过重建索引达到修改分片数量的目的，代价比较大。
 >
->2、副本分片是Primary Shard的副本，用于冗余数据及提高搜索性能，每个Primary shard默认配置了一个Replica shard，但也可以配置多个，且其数量可动态更改。ES会根据需要自动增加或减少这些Replica shard的数量。
+>2、replica shard是primary shard的副本，用于冗余数据及提高搜索性能，每个primary shard默认配置了一个replica shard，可以配置多个，且其数量可动态更改。ES会根据需要自动增加或减少这些Replica shard的数量。
